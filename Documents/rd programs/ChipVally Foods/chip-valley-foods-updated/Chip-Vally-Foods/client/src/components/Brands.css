@@ -1,0 +1,331 @@
+.brands-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, rgba(255, 250, 245, 0.95) 0%, rgba(254, 243, 232, 0.95) 100%),
+              url('https://images.unsplash.com/photo-1495195134817-aeb325a55b65?ixlib=rb-4.0.3&auto=format&fit=crop&w=2076&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+.brands-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(196, 30, 58, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(234, 88, 12, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.brands-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.brands-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.brands-header h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.brands-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-gray);
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.brand-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 
+              0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.brand-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(196, 30, 58, 0.03) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.brand-card:hover::before {
+  opacity: 1;
+}
+
+.brand-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 
+              0 16px 32px rgba(0, 0, 0, 0.08);
+  border-color: rgba(196, 30, 58, 0.2);
+  background: rgba(255, 255, 255, 1);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+}
+
+.brand-logo span {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 900;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.brand-card:hover .brand-logo span {
+  transform: scale(1.05);
+}
+
+/* American Pancake Co */
+.brand-card:nth-child(1) .brand-logo span {
+  border: 3px solid currentColor;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+/* Desita */
+.brand-card:nth-child(2) .brand-logo span {
+  position: relative;
+  font-style: italic;
+}
+
+.brand-card:nth-child(2) .brand-logo span::before {
+  content: '☕';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8rem;
+}
+
+/* El-Dina */
+.brand-card:nth-child(3) .brand-logo span {
+  background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 800;
+  position: relative;
+}
+
+.brand-card:nth-child(3) .brand-logo span::before {
+  content: '☪';
+  position: absolute;
+  top: -25px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+
+/* Gurmé */
+.brand-card:nth-child(4) .brand-logo span {
+  font-style: italic;
+  font-family: 'Georgia', serif;
+  color: #ea580c;
+  font-weight: 700;
+}
+
+/* KOKA */
+.brand-card:nth-child(5) .brand-logo span {
+  background: currentColor;
+  color: white;
+  padding: 0.7rem 2.5rem;
+  border-radius: 8px;
+  letter-spacing: 4px;
+  font-weight: 900;
+}
+
+/* Kelly's */
+.brand-card:nth-child(6) .brand-logo span {
+  font-family: 'Brush Script MT', cursive;
+  font-style: italic;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 700;
+}
+
+/* Mojo Bar */
+.brand-card:nth-child(7) .brand-logo span {
+  position: relative;
+  font-weight: 900;
+}
+
+.brand-card:nth-child(7) .brand-logo span::before {
+  content: '●●●●●●●●●●';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  letter-spacing: -8px;
+  color: currentColor;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* Peacock */
+.brand-card:nth-child(8) .brand-logo span {
+  position: relative;
+  font-weight: 800;
+}
+
+.brand-card:nth-child(8) .brand-logo span::before {
+  content: '🦚';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+}
+
+/* Pantai */
+.brand-card:nth-child(9) .brand-logo span {
+  font-weight: 700;
+  font-style: italic;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.brand-card:nth-child(9) .brand-logo span::after {
+  content: 'norasingh';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Tai Hua */
+.brand-card:nth-child(10) .brand-logo span {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  position: relative;
+}
+
+.brand-card:nth-child(10) .brand-logo span::before {
+  content: '大華';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  color: #dc2626;
+}
+
+/* Waffle Mill */
+.brand-card:nth-child(11) .brand-logo span {
+  position: relative;
+  font-weight: 700;
+}
+
+.brand-card:nth-child(11) .brand-logo span::before {
+  content: '✱';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(4);
+  color: currentColor;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Yes You Can */
+.brand-card:nth-child(12) .brand-logo span {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.brand-card:nth-child(12) .brand-logo span::after {
+  content: 'Celebrate Taste';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .brands-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .brands-section {
+    padding: 4rem 0;
+    background-attachment: scroll;
+  }
+
+  .brands-header {
+    margin-bottom: 2rem;
+  }
+
+  .brands-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .brand-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .brand-logo {
+    min-height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brands-grid {
+    grid-template-columns: 1fr;
+  }
+}

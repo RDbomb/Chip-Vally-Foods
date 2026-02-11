@@ -1,0 +1,401 @@
+.brands-page {
+  min-height: 100vh;
+}
+
+/* Content Section */
+.brands-content-section {
+  padding: 8rem 0 6rem;
+  min-height: 100vh;
+  background: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(254, 250, 246, 0.98) 100%),
+    url('https://images.unsplash.com/photo-1513618827672-0d7c5ad591b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.brands-content-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(196, 30, 58, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(234, 88, 12, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+}
+
+.brands-page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.brands-page-header h1 {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  color: var(--text-dark);
+  font-weight: 900;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+.brands-page-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #c41e3a 0%, #ea580c 100%);
+  border-radius: 2px;
+}
+
+.brands-intro-text {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 5rem;
+  padding: 0 2rem;
+}
+
+.intro-lead {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 600;
+  color: #c41e3a;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  font-family: var(--font-display);
+}
+
+.intro-description {
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  color: var(--text-gray);
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.brands-page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.brand-page-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 
+              0 10px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.brand-page-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(196, 30, 58, 0.04) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.brand-page-card:hover::before {
+  opacity: 1;
+}
+
+.brand-page-card:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1), 
+              0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: rgba(196, 30, 58, 0.25);
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-5px);
+}
+
+.brand-page-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+}
+
+.brand-page-logo span {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  font-weight: 900;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.brand-page-card:hover .brand-page-logo span {
+  transform: scale(1.08);
+}
+
+.brand-page-description {
+  padding-top: 1rem;
+  border-top: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.brand-page-description p {
+  font-size: 1rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Brand-specific styling */
+/* American Pancake Co */
+.brand-page-card:nth-child(1) .brand-page-logo span {
+  border: 3px solid currentColor;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+/* Desita */
+.brand-page-card:nth-child(2) .brand-page-logo span {
+  position: relative;
+  font-style: italic;
+}
+
+.brand-page-card:nth-child(2) .brand-page-logo span::before {
+  content: '☕';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8rem;
+}
+
+/* El-Dina */
+.brand-page-card:nth-child(3) .brand-page-logo span {
+  background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 800;
+  position: relative;
+}
+
+.brand-page-card:nth-child(3) .brand-page-logo span::before {
+  content: '☪';
+  position: absolute;
+  top: -25px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+
+/* Gurmé */
+.brand-page-card:nth-child(4) .brand-page-logo span {
+  font-style: italic;
+  font-family: 'Georgia', serif;
+  color: #ea580c;
+  font-weight: 700;
+}
+
+/* KOKA */
+.brand-page-card:nth-child(5) .brand-page-logo span {
+  background: currentColor;
+  color: white;
+  padding: 0.7rem 2.5rem;
+  border-radius: 8px;
+  letter-spacing: 4px;
+  font-weight: 900;
+}
+
+/* Kelly's */
+.brand-page-card:nth-child(6) .brand-page-logo span {
+  font-family: 'Brush Script MT', cursive;
+  font-style: italic;
+  font-size: clamp(2.2rem, 3vw, 3rem);
+  font-weight: 700;
+}
+
+/* Mojo Bar */
+.brand-page-card:nth-child(7) .brand-page-logo span {
+  position: relative;
+  font-weight: 900;
+}
+
+.brand-page-card:nth-child(7) .brand-page-logo span::before {
+  content: '●●●●●●●●●●';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  letter-spacing: -8px;
+  color: currentColor;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* Peacock */
+.brand-page-card:nth-child(8) .brand-page-logo span {
+  position: relative;
+  font-weight: 800;
+}
+
+.brand-page-card:nth-child(8) .brand-page-logo span::before {
+  content: '🦚';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+}
+
+/* Pantai */
+.brand-page-card:nth-child(9) .brand-page-logo span {
+  font-weight: 700;
+  font-style: italic;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.brand-page-card:nth-child(9) .brand-page-logo span::after {
+  content: 'norasingh';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Tai Hua */
+.brand-page-card:nth-child(10) .brand-page-logo span {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  position: relative;
+}
+
+.brand-page-card:nth-child(10) .brand-page-logo span::before {
+  content: '大華';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  color: #dc2626;
+}
+
+/* Waffle Mill */
+.brand-page-card:nth-child(11) .brand-page-logo span {
+  position: relative;
+  font-weight: 700;
+}
+
+.brand-page-card:nth-child(11) .brand-page-logo span::before {
+  content: '✱';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(4);
+  color: currentColor;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Yes You Can */
+.brand-page-card:nth-child(12) .brand-page-logo span {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.brand-page-card:nth-child(12) .brand-page-logo span::after {
+  content: 'Celebrate Taste';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .brands-page-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .brands-content-section {
+    padding: 6rem 0 4rem;
+    background-attachment: scroll;
+  }
+
+  .brands-page-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .brands-intro-text {
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+  }
+
+  .intro-lead {
+    margin-bottom: 1rem;
+  }
+
+  .brands-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .brand-page-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brands-content-section {
+    padding: 5rem 0 3rem;
+  }
+
+  .brands-intro-text {
+    margin-bottom: 2.5rem;
+  }
+
+  .brands-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-page-card {
+    padding: 2.5rem 1.5rem;
+  }
+}
